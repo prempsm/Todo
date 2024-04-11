@@ -85,7 +85,6 @@ export const contentSlice = createSlice({
     })
     builder.addCase(updateTodo.fulfilled,(state,action)=>{
         state.isLoading = false;
-        console.log(action.payload)
         const index = state.contents.findIndex((data) => data.id == action.payload.id);
         state.contents[index] = {...action.payload};
         toast.success('Updated data successfuly',{theme:'colored'});
